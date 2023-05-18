@@ -1,0 +1,38 @@
+{% extends "urufi_base.html" %}
+{% block content %}
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>ادارة الكلمات الممنوعة </h3>
+                <br>
+            </div>
+        </div>
+    </div>
+    <form action="{{ url_for('movie_mange.upload_video') }}" method="POST" enctype="multipart/form-data">
+     <section class="section">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title" style="text-align: center;">رفع فيديو جديد</h4> 
+            </div>
+            <br>
+            <div class="alert alert-danger" style="text-align: center;">{{ msg }}</div>
+
+            <div class="form-group position-relative has-icon-left mb-4">
+                <input style="text-align: center;" type="text" class="form-control form-control-xl" name="video_name"  placeholder="عنوان الفيديو">
+                <br>
+                <label>اختر ملف الفيديو المراد التحقق منه</label>
+                <input type="file" class="form-control form-control-xl" name = "video">
+                <br>
+                <label>اختر ملف SRT </label>
+                <input type="file" class="form-control form-control-xl" name = "srt">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">رفع الفيديو</button>
+            <br>
+            <br>
+        </div>
+  
+     </section>
+</form>
+</div>
+{% endblock %}

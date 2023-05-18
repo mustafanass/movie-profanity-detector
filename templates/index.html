@@ -1,0 +1,39 @@
+{% extends "urufi_base.html" %}
+{% block content %}
+
+            <div class="page-heading">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-12 col-md-6 order-md-1 order-last">
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <section class="section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title" style="text-align: center;">الصفحة الرئيسية </h4>
+                        </div>
+                        <div class="card-body">
+                                    <div class="alert alert-secondary" style="text-align: center;"><i class="bi bi-star"></i>اهم المعلومات</div>
+                                    <br>
+                                    <div class="alert alert-primary">
+                                        <h5 class="alert-heading" style="text-align: center;">عدد الكلمات الممنوعة</h4>
+                                        <p style="text-align: center;"><h4 style="text-align: center; color: white;">{{ words_num }}</h4></p>
+                                    </div>
+                                    <div class="alert alert-success">
+                                        <h5 class="alert-heading" style="text-align: center;">عدد الفيديوات المرفوعة</h4>
+                                        <p style="text-align: center;"><h4 style="text-align: center; color: white;">{{ movies_num }}</h4></p>
+                                    </div>
+                                    <div class="alert alert-success">
+                                        <h5 class="alert-heading" style="text-align: center;">عدد الكلمات الملتقطة</h4>
+                                        <p style="text-align: center;"><h4 style="text-align: center; color: white;">{{ srt_num }}</h4></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+        </section>
+               
+{% endblock %}

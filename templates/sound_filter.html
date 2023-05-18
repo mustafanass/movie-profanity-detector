@@ -1,0 +1,37 @@
+{% extends "urufi_base.html" %}
+{% block content %}
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>استخراج الكلمات من الفيديو الى ملف صوتي لكل كلمة</h3>
+                <br>
+            </div>
+        </div>
+    </div>
+    <form action="{{ url_for('movie_filter.sound_durations_process') }}" method="POST">
+     <section class="section">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title" style="text-align: center;">اختر اسم الفيديو المراد استخراج الكلمات منه</h4> 
+            </div>
+            <br>
+            <div class="alert alert-danger" style="text-align: center;">{{ msg }}</div>
+
+            <div class="form-group position-relative has-icon-left mb-4">
+                <div class="form-group">
+                    <select class="choices form-select" name="video_id">
+                        {% for value in sql1 %}
+                        <option value = {{ value.id }} > {{ value.movie_name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">تطبيق</button>
+            <br>
+            <br>
+        </div>
+     </section>
+</form>
+</div>
+{% endblock %}

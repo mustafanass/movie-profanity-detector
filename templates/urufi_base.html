@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>URUFI-clients area</title>
+    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='vendors/bootstrap-icons/bootstrap-icons.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/urufi-fav.png') }}" type="image/x-icon">
+    </head>
+
+<body>
+    <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active">
+                <br>
+                <div class="sidebar-header">
+                    <div class="d-flex justify-content-between">
+                        <div class="toggler">
+                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <li class="sidebar-title">Movie Project panal</li>
+                        <br>
+                        <li class="sidebar-item">
+                            <a href="{{ url_for('movie_index.index') }}" class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span>القائمة الرئيسية</span>                             
+                            </a>
+                        </li>
+                        
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-hexagon-fill"></i>
+                                <span>ادراة الكلمات الممنوعة</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                    <a href="{{ url_for('movie_mange.add_words') }}">اضافة كلمات جديدة</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="{{ url_for('movie_index.words_list') }}">استعرض جميع الكلمات </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-hexagon-fill"></i>
+                                <span>ادراة الفيديوات</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                    <a href="{{ url_for('movie_mange.upload_video') }}">رفع فيديو جديد</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="{{ url_for('movie_index.video_list') }}">استعرض الفيديوات </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-hexagon-fill"></i>
+                                <span>فلترة ملف الترجمة</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                    <a href="{{ url_for('srt_filter.words_durations') }}">فلترة الكلمات</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="{{ url_for('srt_filter.resault_of_srt') }}">نتائج الفلترة </a>
+                                </li>
+                            </ul>
+                        </li> 
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-hexagon-fill"></i>
+                                <span>فلترة ملف الفيديو</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                    <a href="{{ url_for('movie_filter.sound_durations') }}">فلترة ملف الفيديو</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="{{ url_for('movie_filter.resault_of_sound') }}">نتائج الفلترة </a>
+                                </li>
+                            </ul>
+                        </li> 
+                        <br>
+                        <br>                           
+                        <li class="sidebar-title">works with<i class="bi bi-heart"></i>by Mustafa Naseer</i></li>
+                    </ul>
+                </div>
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+            </div>
+        </div>
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+            {% block content %}
+            {% endblock %}
+            <br>
+            <br>
+            <br>  
+            <footer>
+                <p style="text-align: center;">this project for testing case by : Mustafa Naseer</p>
+            </footer>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

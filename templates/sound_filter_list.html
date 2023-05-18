@@ -1,0 +1,70 @@
+{% extends "urufi_base.html" %}
+{% block content %}
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <br>
+            </div>
+        </div>
+    </div>
+    <form action="{{ url_for('movie_filter.resault_of_sound') }}" method="POST">
+        <section class="section">
+           <div class="card">
+               <div class="card-header">
+                   <h4 class="card-title" style="text-align: center;">ضع اسم الفيديو المراد استعراض نتائجه </h4>
+                   <br>
+                   <a style="color: red;">ملاحظة في هذه المرحلة يتم اقطاع الملف الصوتي لرفعه الى google_api </a> 
+                   <a style="color: red;">الرفع والمعالجة تتم تلقائيا ولكن متوقفة حاليا لانه يحتاج الى معلومات الدخول الى حساب جوجل اولا وبعدها تفعيله من خلال الملف الخاص به</a> 
+               </div>
+               <br>
+               <div class="alert alert-danger" style="text-align: center;">{{ msg }}</div>
+               <div class="form-group position-relative has-icon-left mb-4">
+                <input style="text-align: center;" type="text" class="form-control form-control-xl" name="video_name"  placeholder="عنوان ملف الفيديو">
+               </div>
+               <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">اضهر النتائج</button>
+               <br>
+               <br>
+           </div>
+        </section>
+   </form>
+    <section class="section">
+        <div class="card">
+            <div class="card-body">
+            </div>
+            <section class="section">
+                <div class="row" id="table-striped">
+                    <div class="col-12">
+                        <div class="card">
+                                <div class="table-responsive">
+                                    <table class="table table-striped mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>اسم الفيديوا</th>
+                                                <th>الكلمة</th>
+                                                <th>الوقت</th>
+                                                <th>مسار الملف</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for value in sql1 %}
+                                            <tr>
+                                                <td>{{ value.movie_name }}</td>
+                                                <td class="text-bold-500">{{ value.words }}</td>
+                                                <td>{{ value.movie_start_time }} -> {{ value.movie_stop_time }}</td>
+                                                <td>{{ value.sound_file_path }}</td>
+                                            </tr>                                         
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+{% endblock %}

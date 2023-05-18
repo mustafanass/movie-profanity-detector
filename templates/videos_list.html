@@ -1,0 +1,55 @@
+{% extends "urufi_base.html" %}
+{% block content %}
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <br>
+            </div>
+        </div>
+    </div>
+    <section class="section">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title" style="text-align: center;">قائمة الكلمات الممنوعة</h4>
+            </div>
+            <div class="card-body">
+            </div>
+            <section class="section">
+                <div class="row" id="table-striped">
+                    <div class="col-12">
+                        <div class="card">
+                                <div class="table-responsive">
+                                    <table class="table table-striped mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>عنوان الفيديو</th>
+                                                <th>مسار الفيديو</th>
+                                                <th>مسار ملف srt</th>
+                                                <th>حالة المف</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for value in sql1 %}
+                                            <tr>
+                                                <td class="text-bold-500">{{ value.id }}</td>
+                                                <td>{{ value.movie_name }}</td>
+                                                <td>{{ value.movie_path }}</td>
+                                                <td>{{ value.movie_srt_path }}</td>
+                                                <td>{{ value.movie_check_status }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+{% endblock %}

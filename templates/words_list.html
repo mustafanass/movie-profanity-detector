@@ -1,0 +1,49 @@
+{% extends "urufi_base.html" %}
+{% block content %}
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <br>
+            </div>
+        </div>
+    </div>
+    <section class="section">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title" style="text-align: center;">قائمة الكلمات الممنوعة</h4>
+            </div>
+            <div class="card-body">
+            </div>
+            <section class="section">
+                <div class="row" id="table-striped">
+                    <div class="col-12">
+                        <div class="card">
+                                <div class="table-responsive">
+                                    <table class="table table-striped mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>الكلمة</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for value in sql1 %}
+                                            <tr>
+                                                <td>{{ value.id }}</td>
+                                                <td class="text-bold-500">{{ value.words_detector }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</div>
+{% endblock %}

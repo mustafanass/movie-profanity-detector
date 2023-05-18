@@ -1,0 +1,9 @@
+package use with python in this project is 
+
+1- flask + jinja2 package
+2- flask-sqlalchemy package
+3- pysrt package
+4- ffmpeg-python package
+5- vosk and pyaudio //to make try to use local recognition sound insted of google_cloud speech to text api
+
+
