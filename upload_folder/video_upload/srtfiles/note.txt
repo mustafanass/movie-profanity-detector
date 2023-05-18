@@ -1,1 +1,0 @@
-this empty files for struct project folders please remove it when you use it
