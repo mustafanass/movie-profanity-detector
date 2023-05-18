@@ -39,7 +39,8 @@ python3 wsgi.py
 its will be start works then open your browser and access 127.0.0.1:5000 then you can see the main page 
 
 # important NOTE
-1- this project create for erathlink task 
+1- this project create for erathlink task .
+
 2- its build by Mustafa Naseer for earthlink company  task .
 
 3- google cloud speech to text api need billing and accounting for access it so i disable the functions thats handle it if you need to enable it :
