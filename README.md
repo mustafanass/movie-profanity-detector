@@ -39,11 +39,8 @@ python3 wsgi.py
 its will be start works then open your browser and access 127.0.0.1:5000 then you can see the main page 
 
 # important NOTE
-1- this project create for erathlink task .
 
-2- its build by Mustafa Naseer for earthlink company  task .
-
-3- google cloud speech to text api need billing and accounting for access it so i disable the functions thats handle it if you need to enable it :
+1- google cloud speech to text api need billing and accounting for access it so i disable the functions thats handle it if you need to enable it :
 - using gcloud tools to auth with your account 
 - make sure you enable speech to text api in your google cloud consol 
 open files "sound_filter.py" in project files and uncomment below commend
@@ -53,9 +50,9 @@ open files "sound_filter.py" in project files and uncomment below commend
 ```
  - then every thing works fine 
  
-4- i use sqlalchemy to works with database and use sqllite for database 
+2- i use sqlalchemy to works with database and use sqllite for database 
 
-5- if you want to re create database you can use below commecnd to re create it
+3- if you want to re create database you can use below commecnd to re create it
 ```
 python3 create_database.py
 ```
